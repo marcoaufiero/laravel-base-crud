@@ -4,6 +4,11 @@
 
 @section('main-content')
     <h1>Comics List</h1>
+    <div>
+        <a href="{{route('comics.create')}}">
+            <button type="button" class="btn btn-light">Add New Comic</button>
+        </a>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -28,7 +33,7 @@
                     </td>
                     <td colspan="6">{!!$elem->description!!}</td>
                     <td><img src="{{$elem->thumb}}" alt=""></td>
-                    <td>{{$elem->price}}</td>
+                    <td>${{$elem->price}}</td>
                     <td>{{$elem->series}}</td>
                     <td>{{$elem->sale_date}}</td>
                     <td>{{$elem->type}}</td>

@@ -15,7 +15,7 @@
                 <h3 class="pb-3">Price: ${{$single_comic->price}}</h3>
                 <h4 class="pb-3">Series: {{$single_comic->series}}</h3>
                 <h4 class="pb-3">Sale Date: {{$single_comic->sale_date}}</h3>
-                <h4 class="pb-3">type: {{$single_comic->type}}</h3>
+                <h4 class="pb-3">Type: {{$single_comic->type}}</h3>
             </div>
         </div>
     </div>
