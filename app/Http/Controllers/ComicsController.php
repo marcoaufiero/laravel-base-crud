@@ -14,7 +14,7 @@ class ComicsController extends Controller
      */
     public function index()
     {   
-        $comics = Comic::All();
+        $comics = Comic::paginate(4);
 
         return view('pages.comics.index', compact('comics'));
     }
@@ -48,7 +48,8 @@ class ComicsController extends Controller
      */
     public function show($id)
     {
-        //
+        $single_comic = Comic::findOrFail($id);
+        return view('pages.comics.show', compact('single_comic'));
     }
 
     /**

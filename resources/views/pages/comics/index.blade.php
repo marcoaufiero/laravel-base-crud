@@ -8,13 +8,13 @@
         <thead>
             <tr>
                 <th scope="col">#id</th>
-                <th scope="col">title</th>
-                <th scope="col" colspan="6">description</th>
-                <th scope="col">thumb</th>
-                <th scope="col">price</th>
-                <th scope="col">series</th>
-                <th scope="col">sale date</th>
-                <th scope="col">type</th>
+                <th scope="col">Title</th>
+                <th scope="col" colspan="6">Description</th>
+                <th scope="col">Picture</th>
+                <th scope="col">Price</th>
+                <th scope="col">Series</th>
+                <th scope="col">Sale Date</th>
+                <th scope="col">Type</th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +22,7 @@
                 <tr>
                     <td>{{$elem->id}}</td>
                     <td>
-                        <a href="#">
+                        <a href="{{route('comics.show', $elem->id)}}">
                             {{$elem->title}}
                         </a>
                     </td>
@@ -38,5 +38,5 @@
         </tbody>
     </table>
     
-        {{-- {{ $pastas->links() }} --}}
+         {{ $comics->links() }}
 @endsection
