@@ -4,6 +4,11 @@
 
 @section('main-content')
     <h1 class="pb-3">{{$single_comic->title}}</h1>
+    @if(session('success'))
+    <div class="alert alert-success my-3">
+        {{session('success')}}
+    </div>
+    @endif
     <div class="container">
         <div class="row">
             <div class="col-4">

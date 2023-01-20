@@ -53,6 +53,13 @@
                                 <i class="fa-solid fa-xmark text-danger"></i>
                             </button>
                         </form>
+                        <div>
+                            <a href="{{route('comics.edit', $elem->id)}}">
+                                <button class="btn btn-dark">
+                                    <i class="fa-solid fa-pen text-primary"></i>
+                                </button>
+                            </a>
+                        </div>
                     </td>
                 </tr>
             @endforeach
