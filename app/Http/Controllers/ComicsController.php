@@ -42,7 +42,7 @@ class ComicsController extends Controller
         $new_record->fill($data);
         $new_record->save();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.show', $new_record->id);
     }
 
     /**
@@ -88,6 +88,8 @@ class ComicsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $single_comic = Comic::findOrFail($id);
+        $single_comic->delete();
+        return redirect()->route('comics.index')->with('success', "You deleted succesfully the comic: $single_comic->title");
     }
 }

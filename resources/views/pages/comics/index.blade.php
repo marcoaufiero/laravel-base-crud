@@ -4,6 +4,13 @@
 
 @section('main-content')
     <h1>Comics List</h1>
+    
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{session('success')}}
+        </div>
+    @endif
+
     <div>
         <a href="{{route('comics.create')}}">
             <button type="button" class="btn btn-light">Add New Comic</button>
@@ -20,6 +27,7 @@
                 <th scope="col">Series</th>
                 <th scope="col">Sale Date</th>
                 <th scope="col">Type</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +45,15 @@
                     <td>{{$elem->series}}</td>
                     <td>{{$elem->sale_date}}</td>
                     <td>{{$elem->type}}</td>
+                    <td>
+                        <form action="{{route('comics.destroy', $elem->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-dark" type="submit">
+                                <i class="fa-solid fa-xmark text-danger"></i>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
     
